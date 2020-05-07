@@ -18,7 +18,7 @@ if [ $option -eq 1 ]; then
 	echo "What review star rating do you want to view?"
 	read -p "Enter rating: " variable
 	impala-shell --var=variable_name=$variable --quiet -f FunctionOne.sql -o result.txt --delimited > /dev/null 2>&1
-	while read line; do echo "Number of reviews with rating 5 star reviews is $line"; done < result.txt
+	while read line; do echo "Number of reviews with rating $variable star reviews is $line"; done < result.txt
   bash <(sed -n '1,$p' script.sh)
 
 elif [ $option -eq 2 ]; then
